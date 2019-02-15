@@ -1,0 +1,35 @@
+{
+    "name": "Asset",
+    "fields": [
+        {
+            "fieldName": "teleconference",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "projector",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "whiteboard",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "aC",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "internet",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20190215124852",
+    "entityTableName": "asset",
+    "dto": "no",
+    "pagination": "no",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

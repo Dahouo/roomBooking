@@ -1,0 +1,45 @@
+entity Room{
+	name String required,
+    image String,
+    floor Float required,
+    capacity Float,
+    location String required,
+    status Status
+}
+
+enum Status{
+	FREE, BOOKED
+}
+
+entity User{
+	name String required,
+    email String,
+    entreprise String required
+}
+
+entity Asset{
+	teleconference Boolean,
+    projector Boolean,
+    whiteboard Boolean,
+    AC Boolean,
+    internet Boolean
+}
+
+entity Booking {
+	start ZonedDateTime required,
+    end ZonedDateTime required,
+    purpose String required
+}
+
+relationship OneToOne {
+	Booking{user} to User,
+    Room{assets} to Asset
+}
+
+relationship OneToMany{
+	Room{bookings} to Booking
+}
+
+paginate Booking with pagination
+
+service all with serviceClass 

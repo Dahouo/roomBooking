@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-asset-heading">Create or edit a Asset</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!asset.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="asset.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_teleconference">Teleconference</label>
+                    <input type="checkbox" class="form-control" name="teleconference" id="field_teleconference"
+                        [(ngModel)]="asset.teleconference" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_projector">Projector</label>
+                    <input type="checkbox" class="form-control" name="projector" id="field_projector"
+                        [(ngModel)]="asset.projector" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_whiteboard">Whiteboard</label>
+                    <input type="checkbox" class="form-control" name="whiteboard" id="field_whiteboard"
+                        [(ngModel)]="asset.whiteboard" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_aC">A C</label>
+                    <input type="checkbox" class="form-control" name="aC" id="field_aC"
+                        [(ngModel)]="asset.aC" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_internet">Internet</label>
+                    <input type="checkbox" class="form-control" name="internet" id="field_internet"
+                        [(ngModel)]="asset.internet" />
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
