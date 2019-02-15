@@ -2,8 +2,8 @@ package com.talenteum.roombooking.web.rest.errors;
 
 import org.springframework.dao.ConcurrencyFailureException;
 import org.springframework.http.HttpStatus;
-import org.springframework.security.access.AccessDeniedException;
-import org.springframework.security.authentication.BadCredentialsException;
+//import org.springframework.security.access.AccessDeniedException;
+//import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -44,15 +44,15 @@ public class ExceptionTranslatorTestController {
     public void missingServletRequestParameterException(@RequestParam String param) {
     }
 
-    @GetMapping("/test/access-denied")
-    public void accessdenied() {
-        throw new AccessDeniedException("test access denied!");
-    }
-
-    @GetMapping("/test/unauthorized")
-    public void unauthorized() {
-        throw new BadCredentialsException("test authentication failed!");
-    }
+//    @GetMapping("/test/access-denied")
+//    public void accessdenied() {
+//        throw new AccessDeniedException("test access denied!");
+//    }
+//
+//    @GetMapping("/test/unauthorized")
+//    public void unauthorized() {
+//        throw new BadCredentialsException("test authentication failed!");
+//    }
 
     @GetMapping("/test/response-status")
     public void exceptionWithReponseStatus() {

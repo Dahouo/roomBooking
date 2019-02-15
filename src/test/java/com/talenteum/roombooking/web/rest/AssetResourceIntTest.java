@@ -5,7 +5,7 @@ import com.talenteum.roombooking.RoomBookingApp;
 import com.talenteum.roombooking.domain.Asset;
 import com.talenteum.roombooking.repository.AssetRepository;
 import com.talenteum.roombooking.service.AssetService;
-import com.talenteum.roombooking.web.rest.errors.ExceptionTranslator;
+//import com.talenteum.roombooking.web.rest.errors.ExceptionTranslator;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -68,8 +68,8 @@ public class AssetResourceIntTest {
     @Autowired
     private PageableHandlerMethodArgumentResolver pageableArgumentResolver;
 
-    @Autowired
-    private ExceptionTranslator exceptionTranslator;
+//    @Autowired
+//    private ExceptionTranslator exceptionTranslator;
 
     @Autowired
     private EntityManager em;
@@ -87,7 +87,7 @@ public class AssetResourceIntTest {
         final AssetResource assetResource = new AssetResource(assetService);
         this.restAssetMockMvc = MockMvcBuilders.standaloneSetup(assetResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
+//            .setControllerAdvice(exceptionTranslator)
             .setConversionService(createFormattingConversionService())
             .setMessageConverters(jacksonMessageConverter)
             .setValidator(validator).build();
