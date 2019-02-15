@@ -1,0 +1,15 @@
+version: '2'
+services:
+    roombooking-app:
+        image: roombooking
+        environment:
+            - _JAVA_OPTIONS=-Xmx512m -Xms256m
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:mysql://roombooking-mysql:3306/roombooking?useUnicode=true&characterEncoding=utf8&useSSL=false
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 2391:2391
+    roombooking-mysql:
+        extends:
+            file: mysql.yml
+            service: roombooking-mysql
