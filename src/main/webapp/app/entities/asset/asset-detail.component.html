@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="asset">
+            <h2><span>Asset</span> {{asset.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Teleconference</span></dt>
+                <dd>
+                    <span>{{asset.teleconference}}</span>
+                </dd>
+                <dt><span>Projector</span></dt>
+                <dd>
+                    <span>{{asset.projector}}</span>
+                </dd>
+                <dt><span>Whiteboard</span></dt>
+                <dd>
+                    <span>{{asset.whiteboard}}</span>
+                </dd>
+                <dt><span>A C</span></dt>
+                <dd>
+                    <span>{{asset.aC}}</span>
+                </dd>
+                <dt><span>Internet</span></dt>
+                <dd>
+                    <span>{{asset.internet}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/asset', asset.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>
